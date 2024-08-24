@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import authRouter from "./routes/auth.route.js";
+import userRouter from "./routes/user.route.js";
 import { connectDB } from "./config/db.js";
 import { handleError } from "./middleware/error.js";
 
@@ -17,6 +19,8 @@ app.use(cors(corsOptions));
 app.use(cookieParser());
 
 //routes
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 //default
 app.get("/", (req, res) => {
