@@ -133,7 +133,7 @@ export const deleteTimeSlots = async (req, res, next) => {
         new Date(slot.date).toISOString().split("T")[0] ===
         new Date(date).toISOString().split("T")[0];
       const isSameSeat = seatNumber ? slot.seatNumber === seatNumber : true;
-      console.log(isSameDate);
+
       return !(isSameDate && isSameSeat);
     });
 
