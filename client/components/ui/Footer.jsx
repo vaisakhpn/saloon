@@ -17,7 +17,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-500"
+                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-100"
                 >
                   About US
                 </Link>
@@ -25,7 +25,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-500"
+                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-100"
                 >
                   Career
                 </Link>
@@ -33,7 +33,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-500"
+                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-100"
                 >
                   Team
                 </Link>
@@ -46,7 +46,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-500"
+                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-100"
                 >
                   Help &amp; Support
                 </Link>
@@ -54,7 +54,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-500"
+                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-100"
                 >
                   Partner with us
                 </Link>
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-500"
+                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-100"
                 >
                   Terms &amp; Condition
                 </Link>
@@ -75,7 +75,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-500"
+                  className="block py-1.5 font-sans text-base font-normal leading-relaxed text-gray-300 antialiased transition-colors hover:text-gray-100"
                 >
                   Privacy Policy
                 </Link>
