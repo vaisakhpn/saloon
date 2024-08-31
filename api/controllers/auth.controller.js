@@ -10,7 +10,7 @@ export const signup = async (req, res, next) => {
 
     if (existingUser) {
       if (existingUser.email === email) {
-        return res.status(400).json({ message: "Email already exists" });
+        return next(errorHandler(404, "Email already exist"));
       }
     }
     const username = email.split("@")[0];
