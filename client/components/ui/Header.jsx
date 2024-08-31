@@ -3,7 +3,7 @@ import Link from "next/link";
 import SearchBox from "../SearchBox";
 import { useSelector } from "react-redux";
 
-import DropdownMenu from "../DropdownMenu";
+import DropdownMenu from "./DropDown/DropdownMenu";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
