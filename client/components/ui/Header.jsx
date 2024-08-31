@@ -2,7 +2,8 @@
 import Link from "next/link";
 import SearchBox from "../SearchBox";
 import { useSelector } from "react-redux";
-import Image from "next/image";
+
+import DropdownMenu from "../DropdownMenu";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
@@ -19,12 +20,7 @@ export default function Header() {
         <div>
           {currentUser ? (
             <div>
-              <Image
-                src={currentUser.avatar}
-                alt="avatar"
-                width={50}
-                height={50}
-              />
+              <DropdownMenu avatar={currentUser.avatar}></DropdownMenu>
             </div>
           ) : (
             <button className="bg-green-600 p-1 sm:p-2 px-2 sm:px-5 rounded-full items-center hover:bg-green-700">
