@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 export const useAuth = (type) => {
   const router = useRouter();
   const dispatch = useDispatch();
+
   const check = async (data) => {
     dispatch(signInStart());
     try {
@@ -43,7 +44,6 @@ export const useAuth = (type) => {
           email: data.email,
         });
         if (!isAvailable) {
-          dispatch(signInFailure("Some fields are already exist."));
           return;
         }
       }
