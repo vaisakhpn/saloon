@@ -1,5 +1,6 @@
 import { Inter, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
+import Providers from "@/redux/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const ibmPlexSerif = IBM_Plex_Serif({
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${ibmPlexSerif.variable}`}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
