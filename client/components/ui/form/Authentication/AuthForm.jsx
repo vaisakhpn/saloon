@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CustomInput from "../CustomInput";
@@ -8,8 +8,12 @@ import Button from "../../Button/Button";
 import { FcGoogle } from "react-icons/fc";
 import schema from "./constant";
 import { useAuth } from "./authentication";
+import { useDispatch, useSelector } from "react-redux";
+import { resetAuthState } from "@/redux/user/userSlice";
 
 const AuthForm = ({ type }) => {
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.user);
   const formSchema = schema(type);
   const { onSubmit } = useAuth(type);
 
@@ -23,6 +27,10 @@ const AuthForm = ({ type }) => {
     },
     mode: "onBlur",
   });
+
+  useEffect(() => {
+    dispatch(resetAuthState());
+  }, [dispatch]);
 
   return (
     <section className="grid grid-cols-2 w-full min-h-screen max-w-7xl mx-auto">
@@ -88,10 +96,18 @@ const AuthForm = ({ type }) => {
                   <div className="flex justify-between items-center w-9/12 pt-3">
                     <FcGoogle className="text-3xl ml-10" />
                     <Button
-                      label={type === "sign-in" ? "Sign In" : "Sign Up"}
+                      label={
+                        loading
+                          ? "Processing..."
+                          : type === "sign-in"
+                          ? "Sign In"
+                          : "Sign Up"
+                      }
                       buttonColor={type === "sign-in" ? "secondary" : "primary"}
+                      disabled={loading}
                     />
                   </div>
+                  {error && <p className="text-red-500 ">{error}</p>}
                 </form>
               </FormProvider>
               <footer className="flex w-full justify-start pl-16 pt-2 gap-1">
@@ -102,7 +118,7 @@ const AuthForm = ({ type }) => {
                 </p>
                 <Link
                   href={type === "sign-in" ? "/sign-up" : "/sign-in"}
-                  className="form-link"
+                  className="text-14 cursor-pointer font-medium text-blue-600"
                 >
                   {type === "sign-in" ? "Sign up" : "Sign in"}
                 </Link>
