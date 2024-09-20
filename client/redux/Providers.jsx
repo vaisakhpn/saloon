@@ -12,7 +12,7 @@ function ReduxProvider({ children }) {
   }, []);
 
   if (!isClient) {
-    return null; // or some loading spinner
+    return null;
   }
 
   return (

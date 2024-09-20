@@ -40,6 +40,7 @@ const userSlice = createSlice({
     },
     updateUserStart: (state) => {
       state.loading = true;
+      state.error = null;
     },
     updateUserSuccess: (state, action) => {
       state.currentUser = action.payload;
@@ -47,7 +48,8 @@ const userSlice = createSlice({
       state.error = null;
     },
     updateUserFailure: (state, action) => {
-      state.error = action.payload;
+      state.error = action.payload.error;
+      state.currentUser = action.payload.currentUser || state.currentUser;
       state.loading = false;
     },
   },

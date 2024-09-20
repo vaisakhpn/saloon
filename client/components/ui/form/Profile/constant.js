@@ -1,18 +1,16 @@
 import { z } from "zod";
 
-const schema = (type) =>
+const schema = () =>
   z.object({
-    username:
-      type === "sign-in"
-        ? z.string().optional()
-        : z
-            .string()
-            .min(3, "Minimum 3 characters are required")
-            .nonempty("Name is required"),
+    username: z
+      .string()
+      .min(3, "Minimum 3 characters are required")
+      .nonempty("Name is required"),
     email: z
       .string()
       .email("Invalid email format")
       .nonempty("Email is required"),
+    password: z.string().min(0, "").optional(),
   });
 
 export default schema;

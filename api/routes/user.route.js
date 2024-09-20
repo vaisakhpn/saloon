@@ -8,7 +8,7 @@ import { verifyToken } from "../middleware/verifyToken.js";
 
 const router = express.Router();
 
-router.post("/update/:id", verifyToken, updateUser);
+router.put("/update/:id", verifyToken, updateUser);
 router.delete("/delete/:id", verifyToken, deleteUser);
 router.get("/:id", verifyToken, getUser);
 

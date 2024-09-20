@@ -14,20 +14,24 @@ export const profile = () => {
 
   const onSubmit = async (data) => {
     try {
+      console.log("Before update, current user:", currentUser);
       dispatch(updateUserStart());
-      const response = await axios.post(
+
+      const updatedData = { ...currentUser, ...data };
+
+      const response = await axios.put(
         `${process.env.NEXT_PUBLIC_API_URL}/user/update/${currentUser._id}`,
-        data,
+        updatedData,
         { withCredentials: true }
       );
       dispatch(updateUserSuccess(response.data));
-      router.push("/");
     } catch (error) {
+      const currentUserData = error.response?.data?.currentUser || currentUser;
       dispatch(
-        updateUserFailure(
-          error.response?.data?.message ||
-            "An error occurred. Please try again."
-        )
+        updateUserFailure({
+          error: error.response?.data?.message || "An error occurred.",
+          currentUser: currentUserData,
+        })
       );
     }
   };

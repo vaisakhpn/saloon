@@ -27,7 +27,7 @@ export const updateUser = async (req, res, next) => {
 
     res.status(200).json(rest);
   } catch (error) {
-    next(error);
+    return next(errorHandler(403, "Email Already exist"));
   }
 };
 export const deleteUser = async (req, res, next) => {
