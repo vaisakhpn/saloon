@@ -7,8 +7,9 @@ import DropdownMenu from "./DropDown/DropdownMenu";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
+
   return (
-    <div className="fixed top-0 left-0 w-full bg-header p-1 z-50 shadow-md">
+    <div className="top-0 relative left-0 w-full bg-header p-1 z-50 shadow-md">
       <header className="flex flex-row justify-between items-center max-w-6xl mx-auto  p-4 ">
         <Link className="text-black font-bold text-xl sm:text-3xl" href="/">
           Logo

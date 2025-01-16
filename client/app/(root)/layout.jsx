@@ -3,7 +3,7 @@ import Header from "@/components/ui/Header";
 
 export default function RootLayout({ children }) {
   return (
-    <main className="flex-row w-full font-inter">
+    <main className="flex-col w-full  font-inter">
       <Header />
       {children}
       <Footer />
